@@ -1,0 +1,11 @@
+{
+  "dependencyPropertyMap": {
+    "org.mockito:mockito-junit-jupiter": "mockito.version",
+    "org.apache.logging.log4j:log4j-core": "log4j2.version"
+  },
+  "pluginPropertyMap": {
+    "org.apache.maven.plugins:maven-jar-plugin": "maven.jar.plugin.version",
+    "org.apache.maven.plugins:maven-surefire-plugin": "maven.surefire.plugin.version",
+    "org.jacoco:jacoco-maven-plugin": "jacoco.plugin.version"
+  }
+}

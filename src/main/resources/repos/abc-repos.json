@@ -1,0 +1,17 @@
+{
+  "owner": "DivakarChowdary",
+  "repos": [
+    "service-auth",
+    "service-api-gateway",
+    "service-notifications"
+  ],
+  "versions": {
+    "spring.boot.version": "3.3.0",
+    "project.version": "1.0.0-RELEASE",
+    "log4j2.version": "2.23.1",
+    "mockito.version": "5.12.0",
+    "maven.jar.plugin.version": "3.4.1",
+    "maven.surefire.plugin.version": "3.3.0",
+    "jacoco.plugin.version": "0.8.12"
+  }
+}

@@ -1,0 +1,55 @@
+spring:
+  application:
+    name: pom-standardization-agent
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.mail.MailSenderAutoConfiguration
+      - org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+
+pom:
+  updater:
+    github-base-url: https://github.com/
+    github-api-base-url: https://api.github.com
+    base-branch: main
+    maven-goals:
+      - clean
+      - verify
+    thread-pool-size: 7
+    repo-timeout-minutes: 10
+    email-smtp-port: 25
+    email-smtp-auth: false
+
+    ##──────────────────────────────────────────────────────────────────────────
+    ## Required — set these before running (or via environment variables)
+    ##──────────────────────────────────────────────────────────────────────────
+    # work-dir: /tmp/pom-updater
+    # pr-dir: /tmp/pom-updater-prs
+    # feature-branch: feature/pom-standardize
+    # owner: your-github
+    # github-user: your-github-username
+    # github-token: ${GITHUB_TOKEN}
+    # approver-token: ${APPROVER_TOKEN}
+    # maven-home: /usr/local/apache-maven
+
+    ##──────────────────────────────────────────────────────────────────────────
+    ## Email
+    ##──────────────────────────────────────────────────────────────────────────
+    # email-smtp-host: smtp.company.com
+    # email-from: pom-agent@company.com
+    # email-recipients:
+    #   - team@company.com
+    # email-cc-recipients:
+    #   - lead@company.com
+
+    ##──────────────────────────────────────────────────────────────────────────
+    ## Reviewers (auto-assigned to every PR, minus the PR author)
+    ##──────────────────────────────────────────────────────────────────────────
+    # reviewer-usernames:
+    #   - github-reviewer-1
+    #   - github-reviewer-2
+
+logging:
+  level:
+    com.divakarchowdary.pom: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%level] %logger{36}: %msg%n"
